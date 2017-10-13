@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" >
+    <meta name="viewport" content="width=device-width, height=device-height" >
+	<title>Personalized Results Page</title>
+<!-- Original Coveo Stylesheet -->
+    <link rel="stylesheet" href="/css/CoveoFullSearchNewDesign.css"/>
+	<link href="http://bainsight.com/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />    
+	<script src="/modules/O365/adal.js"></script> 
+
+	
+	<script src="/js/CoveoJsSearch.js"></script>
+	<script src="/js/templates/templatesNew.js"></script> 
+    <script id="SPOAuth" src="modules/O365/SPOAuth.js" data-tenant="baidemoenv.onmicrosoft.com" data-client-id="cc95a12d-9923-4426-83ed-113293693d47"  data-tenant-url="https://baidemoenv.sharepoint.com" data-rest-uri="http://demofederator.azurewebsites.net/services/FederatorService.svc"></script>  
+    
+    
+    <!-- Bootstrap CDN -->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    
+    <link href='/modules/DemoCustom/Personalization/CSS/bootstrap.min.css' rel='stylesheet'>
+      
+    <!-- Optional  Bootstrap Theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    
+    <!-- Font Awesome (for icons) -->
+    <script src="https://use.fontawesome.com/2c6ac1fdb1.js"></script>
+
+	
+    <!-- Custom CSS -->
+      
+   <!-- <link href='/modules/DemoCustom/Personalization/CSS/CoveoFullSearchNewDesignTRC.css' rel='stylesheet'>-->
+
+    
+	<script>
+		window.location.hash =  window.location.hash.replace('k=','q=');
+//		Coveo.TemplateCache.registerTemplate("BAIListNoPreview", Coveo.HtmlTemplate.fromString("<div class=\"coveo-result-frame collapsed shadow\">\n <div class=\"info\">\n        <div class=\"list-info-wrapper\">\n           <div class=\"list-info\" >\n               <a class=\"CoveoResultLink\"></a>\n           </div>\n               <div class=\"list-info\" >\n                 <div class=\"CoveoFieldValue\" data-field=\"@excerpt\" data-caption=\"Excerpt\" data-html-value='true'></div>\n           </div>           \n            <div class=\"list-info\">\n                <div class=\"CoveoIcon\" data-value=\"coveo-sprites-salesforce-standard-avatar-small\" data-with-label=\"false\" data-label-value=\"Author\"></div>  \n                <div class=\"CoveoFieldValue cell\" data-field=\"@DisplayAuthor\" data-caption=\"Author\" data-split-values='true'></div>\n                <div class=\"CoveoIcon\" data-value=\"coveo-sprites-salesforce-standard-event-small\"  data-with-label=\"false\" data-label-value=\"Date\"></div>\n                <div class=\"CoveoFieldValue cell\" data-field=\"@date\" data-helper=\"date\"></div>\n            </div>\n        </div>\n\n        <div class=\"extra-info\">\n           <div class=\"list-info\">\n               <div class=\"PropName\">Source</div>\n               <div class=\"CoveoFieldValue\" data-field=\"@ContentSource\" data-caption=\"Source\"></div>\n            </div>\n            <div class=\"list-info\">\n               <div class=\"PropName\">File Name</div>\n               <div class=\"CoveoFieldValue\" data-field=\"@title\" data-caption=\"Title\"></div>\n            </div>\n            <div class=\"list-info\">\n               <div class=\"PropName\">File Type</div>\n               <div class=\"CoveoFieldValue\" data-field=\"@FileType\" data-caption=\"FileType\"></div>\n            </div>\n        </div>\n     </div>\n     <div class=\"CoveoActionBar\" data-flow = \"vertical\">\n            <div class=\"CoveoOpenPreviewAction\"></div> \n     </div>\n  </div>\n  \n",{"condition":null,"layout":"bailist","fieldsToMatch":null,"mobile":null}),true, true);
+	</script>
+	
+	
+  </head> 
+    
+  <body id="search" class="CoveoSearchInterface BAInsightCustom" data-enable-debug-info="true" data-auto-trigger-query="true" data-hide-until-first-query="false" data-enable-duplicate-filtering="true" data-enable-history="true" data-design="new">
+ 
+  <!--<div class="CoveoSmartPreviews" data-sphost-url="https://baidemoenv.sharepoint.com/DemoSearch" data-app-permission-identifier="i:0i.t|ms.sp.ext|70b1a44b-3850-4a1b-9a79-df49c6dbad30@db979fa2-bc81-465f-acce-bea76449cb91"></div>-->
+ 
+<!-- Site Bar Zone -->
+
+      
+    
+<!--Logo Section -->
+<!--
+          <div class='container center-block'>
+
+                   <a class='navbar-brand' href="energy.html?#q=*"><img id='TRC_Logo' src="/modules/DemoCustom/Clients/TRC/Images/TRC_Logo.jpeg" /> </a>
+
+           </div>
+-->
+      
+
+<!-- Logo Section -->
+
+<div class='container-fluid'>      
+
+<nav id='navigation' class='navbar navbar-fixed-top'>
+
+
+    
+    <div id="siteBar-zone">
+        <div  class="leftAlign"></div>
+
+        <!--O365 authentication-->
+        <div class="rightAlign">
+            <div id="userName"></div>
+            <script>
+                var authContext = new AuthenticationContext(config);
+                var user = authContext.getCachedUser().profile.name;
+                document.getElementById('userName').innerText = user;
+            </script>
+        </div>
+    </div>
+    
+
+    
+<!--    <div class='container'>-->
+        
+        <div class='row'>
+            <div class='col-xl-3 col-lg-3 col-md-3'>
+            <div class='container'>
+                 
+<!--        <div class="coveo-logo-section">-->
+<!--        <div class="coveo-logo-column">-->
+            <a href="Personalized_landing.html"><img id="logo" src="/modules/DemoCustom/Personalization/Images/LifeSciences_BA-Insight-logo.png" /></a>
+<!--        </div>-->
+            
+            </div>
+            </div>
+            
+            <div class='col-xl-6 col-lg-6 col-md-6'>
+                
+        <div id='search_header' class='container center-block'>   
+            <div id='search_bar' class="coveo-search-section">
+            <!-- Export to Excel Button -->
+            <div class="CoveoSettings"></div>
+            <!-- Scoped Search -->
+            <div class="CoveoSearchbox" data-placeholder="Search..." data-enable-omnibox="true" data-add-scoped-search="true" data-show-keep-refiners="false">
+            </div>    
+            </div>
+            
+            </div>
+            
+            <div class='container'>
+                <div id='search_scopes'>
+                    <div class='scope1 searchtab selectedtab'>All</div>
+					 <div class='scope5 searchtab'> <a href="Personalized_research.html?#q=medical">Research</a></div>
+                    <div class='scope2 searchtab'>Images</div>
+                    <div class='scope3 searchtab'>Videos</div>
+                    <div class='scope4 searchtab'>News</div>
+                   
+                </div>
+            </div>
+        </div> <!-- Second Col Div -->
+            
+        </div>
+        
+<!--    </div>  coveo search section container -->
+    
+</nav>
+      
+<!--<div class='container-fluid'>-->
+    <div class='row search_content'>
+        <div class='col-xl-3 col-lg-3 col-md-3'>
+<!--            <div class='container'>-->
+                <div id='left_column' class="sidebar center-block">
+                    <div class="coveo-facet-column">
+                        <div class="CoveoFacet" data-title="Author" data-lookup-field="@DisplayAuthor" data-field="@DisplayAuthor" data-enable-toggling-operator='true'></div>
+                        <div class="CoveoFacet" data-title="File Type" data-lookup-field="@FileType" data-field="@FileType"></div>
+                        <div id='Refiner_Section' class="CoveoFacetSlider" data-title="Modified Date" data-lookup-field="@date" data-field="@date" data-slider-graph-steps="20" data-range-slider="true" data-date-field="true"></div>
+                    </div> <!-- coveo facet column div -->
+                </div> <!-- sidebar div -->
+<!--            </div>  container div -->
+        </div> <!-- column div -->
+        
+    <!--<div class='container coveo-header-zone'>-->
+<!--      <div class="coveo-header-zone"> -->
+<!--      <nav class='navbar navbar-fixed-top'>-->
+      
+<!--Original Coveo Search Section -->
+
+    <div class='col-xl-6 col-lg-6 col-md-6'>  
+<!--        <div class='container'>-->
+            <div id='search_results' class='center-block'>
+                <div class="coveo-main-section hidden">
+                    <div id='Main_results_section' class="coveo-results-column center-block">
+                
+                        <div class="CoveoBreadcrumb"></div>
+                        <div class="CoveoShareQuery"></div>
+                        <div class="CoveoExportToExcel"></div>
+                
+                        <div class="header-info">
+
+                            <div class="coveo-summary-section">
+                                <span class="CoveoQuerySummary"></span>
+                            </div> <!-- coveo summary section -->
+
+                            <div class="coveo-results-header">
+                              <div class="coveo-sort-section">
+                                <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>  
+                                <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>      
+                              </div>
+                <!--
+                              <div class="coveo-result-layout-section">
+                                <div class="CoveoResultLayout" data-render-as="dropdown" data-has-hover="true"></div>
+                              </div>
+                -->
+                              <div class="CoveoResultsPerPage"></div>
+                <!--              <div class="CoveoPager"></div>-->
+                            </div> <!-- coveo results header -->
+                          <div class="CoveoErrorReport" data-show-detailed-error="false"></div>
+
+                        </div> <!-- header info -->
+
+                
+<!-- People Search Section -->
+            <div id='landing_categories'>
+                <h3 id='people_search_header'>Best People Matches</h3>
+               <div id='peoplebestmatches'>
+					          
+				</div>
+            </div>  
+
+<!--Coveo Result List - need to include Source-->
+            
+              <!-- A reusable result template. Note that it is important to declare it outside of the ResultList component. -->
+ <script type='text/underscore' class='result-template' id='ReusableTemplate'>
+   
+  </script>
+                        
+<div id='Results_List' class="CoveoResultList" data-caption="List" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-has-hover="true">
+                
+<!--            <div class="CoveoResultList" data-caption="List" data-layout="bailist" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-has-hover="true">-->
+                  
+            <script type='text/underscore' class='result-template'>
+                <div>
+                    <div class="coveo-result-frame collapsed shadow">       
+                        <div class="info">                                        
+                            <div class="list-info-wrapper">
+                            
+                                <div id='Result_Title' class="list-info" >  
+                                    <a class="CoveoResultLink"></a>         
+                                </div> 
+                                
+                                <div id='Result_Source' class='list-info'>
+                                    <div class='ContentSource CoveoFieldValue' data-field='@clickUri' data-caption='Source'</div>
+                                
+                                </div>
+                                
+                                <div class="list-info" >          
+                                    <div id='Result_Summary' class="CoveoFieldValue" data-field="@excerpt" data-caption="Excerpt" data-html-value='true'></div>     
+                                </div>                                                                               
+                                <div class="list-info">
+                                
+                                    <div class="CoveoPreview preview-small coveo-no-preview" data-small="true"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII=" class="coveo-sprites-salesforce-doctype-pdf-small"></div>
+                                     
+                                    <div class="CoveoFieldValue" data-field="@FileType" data-caption="FileType"></div>
+                                    
+                                    <div class="CoveoIcon" data-value="coveo-sprites-salesforce-standard-avatar-small" data-with-label="false" data-label-value="Author"></div>
+                                    <div id='author' class="CoveoFieldValue cell" data-field="@DisplayAuthor" data-caption="Author" data-split-values='true'></div> 
+                                    
+                                    <div id='date' class="CoveoIcon" data-value="coveo-sprites-salesforce-standard-event-small"  data-with-label="false" data-label-value="Date"></div>
+                                    
+                                    <div class="CoveoFieldValue cell" data-field="@date" data-helper="date"></div>  
+                                    
+                                </div>   
+                                
+                            </div> 
+                        </div>
+                                                                   
+                    <!--<div class="CoveoActionBar" data-flow = "vertical">  
+                    <div class="CoveoOpenPreviewAction"></div> 
+                    </div> --> 
+            </div>     
+          </div>
+    </script>
+</div> <!-- Result List -->
+                  
+        </div> <!-- results column center-block -->
+                
+    </div><!-- search results -->
+            
+    <div class="coveo-tab-section">
+        <a class="CoveoTab" data-icon="coveo-sprites-file-small" data-id="b29924a9-ec32-4c10-8892-a544b69ee121" data-expression='{searchboxquery} FederatorBackends:"Personalization"' data-caption="Everything"></a>        
+    </div>
+        
+<!--      </div>  column div -->    
+      
+<!-- Footer -->
+    
+    <div class="footer-zone">
+<!--
+        <div class="coveo-summary-section">
+            <span class="CoveoQuerySummary"></span>
+        </div>
+-->
+        <div class="CoveoPager"></div>          
+    </div>
+
+        </div> <!-- search results container --> 
+    </div><!-- col 6 -->
+    
+                
+<!-- Right Panel Section -->
+            
+<!--            <div class='container'>-->
+              <div id='right_panel' class='col-lg-3 col-md-3'>
+                    <h5 class='coveo-facet-header-title boldme' title='Trending results'>Trending</h5>
+                    <div class="CoveoContentBySearch" data-query-text='FederatorBackends:"Personalization" *' data-source-id="c52e1486-2bdd-4a8e-92cb-c0310c7a5e03" data-results-per-page='5' data-hide-until-first-query="false">
+						
+						<div class="separator"></div>
+						<div class="CoveoResultList" data-fields-to-include='@filetype,@ContentSource'>
+							<script type='text/underscore' class='result-template'>
+								<div class="coveo-result-frame">
+									<div class="info">
+										 <div class="list-info-wrapper">
+											<div class="list-info">
+												<div class="BaiIconCustom" data-small="true">
+												<img class="<%= myIconSelector(obj) %>"/>
+												</div>
+												<div class="CoveoFieldValue cell" data-field='@title'></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</script>
+						</div>            
+					</div>
+
+                    
+                    <h5 class='coveo-facet-header-title boldme' title='Social Results'>Social Results</h5>
+                   <div class="CoveoContentBySearch" data-query-text='FederatorBackends:"Personalization" *' data-source-id="58c6c664-f4fb-4f58-bfee-7197e7e0c140" data-results-per-page='5' data-hide-until-first-query="false">
+                  
+                    <div class="separator"></div>
+                   <div class="CoveoResultList" data-fields-to-include='@filetype,@ContentSource'>
+				   
+						<script type='text/underscore' class='result-template'>
+								<div class="coveo-result-frame">
+									<div class="info">
+										 <div class="list-info-wrapper">
+											<div class="list-info">
+												<div class="BaiIconCustom" data-small="true">
+												<img class="<%= myIconSelector(obj) %>"/>
+												</div>
+												<div class="CoveoFieldValue cell" data-field='@title'></div>
+											</div>
+										</div>
+									</div>
+								</div>
+						</script>
+				   
+				   </div>            
+					</div>
+
+                    
+                  
+                
+                </div>
+<!--            </div>-->
+                
+        </div><!-- row div div -->
+</div> <!--container fluid -->
+    
+<footer id='footer'>
+    <div class='container'>
+    
+    </div>   
+</footer>
+
+
+    
+<!--        <div id='search_content' class='container'>-->
+<!--    <div class='row'>-->
+<!--    <div id='center_panel' class='col-lg-6 col-md-6 col-sm-8 col-10'>-->
+<!--
+    <div class="coveo-main-section hidden">
+      <div class="coveo-results-column">    
+        <div class="CoveoBreadcrumb"></div>
+        <div class="CoveoShareQuery"></div>
+        <div class="CoveoExportToExcel"></div>
+        <div class="header-info">
+              <div class="coveo-summary-section">
+                <span class="CoveoQuerySummary"></span>
+              </div>
+            <div class="coveo-results-header">
+              <div class="coveo-sort-section">
+                <span class="CoveoSort" data-sort-criteria="relevancy" data-caption="Relevance"></span>  
+                <span class="CoveoSort" data-sort-criteria="date descending,date ascending" data-caption="Date"></span>          
+              </div>
+-->
+<!--
+              <div class="coveo-result-layout-section">
+                <div class="CoveoResultLayout" data-render-as="dropdown" data-has-hover="true"></div>
+              </div>
+-->
+<!--              <div class="CoveoResultsPerPage"></div>-->
+<!--              <div class="CoveoPager"></div>-->
+<!--
+          </div>
+          <div class="CoveoErrorReport" data-show-detailed-error="false"></div>
+        </div>
+        
+          <div class="CoveoResultList" data-caption="List" data-layout="bailist" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-has-hover="true"></div>
+-->
+      
+<!--        </div>-->
+<!--
+</div>
+</div>
+-->
+
+
+
+
+<!--  Card Layout -->
+<!--          <div class="CoveoResultList" data-caption="Card" data-layout="baicard" data-wait-animation="fade" data-auto-select-fields-to-include="true" data-has-hover="true"></div>-->
+                
+<!--    </div>  Column Div -->
+        
+
+
+      
+       
+        <!-- Refiners-->
+<!--
+        <div id='left_panel' class='col-lg-3 col-md-3 col-sm-4 col-2'>
+        <div class="sidebar">
+        <div class="coveo-facet-column">
+            <div class="CoveoFacet" data-title="Supervisor" data-lookup-field="@Refinablestring109" data-field="@Refinablestring109" data-available-sorts='occurrences,alphaascending,alphadescending' data-enable-toggling-operator='true'></div>
+            <div class="CoveoFacet" data-title="Rig Type" data-lookup-field="@Refinablestring108" data-field="@Refinablestring108" data-available-sorts='occurrences,alphaascending,alphadescending' data-enable-toggling-operator='true'></div>
+            <div class="CoveoHierarchicalFacet" data-title="Production Stage" data-lookup-field="@Refinablestring120" data-field="@Refinablestring120" data-delimiting-character=':' data-available-sorts='occurrences,alphaascending,alphadescending' data-enable-toggling-operator='true'></div>
+            <div class="CoveoFacet" data-title="Author" data-lookup-field="@DisplayAuthor" data-field="@DisplayAuthor" data-enable-toggling-operator='true'></div>
+            <div class="CoveoFacet" data-title="File Type" data-lookup-field="@FileType" data-field="@FileType"></div>
+            <div class="CoveoFacetSlider" data-title="Modified Date" data-lookup-field="@date" data-field="@date" data-slider-graph-steps="20" data-range-slider="true" data-date-field="true"></div>
+        </div>
+       </div>  Column Div 
+      </div>
+    </div>  Row Div 
+-->
+<!--</div>  Coveo HeaderZone Div -->
+
+      
+      <!-- Bootstrap jQuery CDN -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      <!-- Bootstrap JS CDN -->
+<!--      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+	  
+        <script src='/modules/DemoCustom/Personalization/JS/bootstrap.min.js' rel='stylesheet'></script>
+      
+<!-- Custom CSS -->
+        <link href='/modules/DemoCustom/Personalization/CSS/Personalization_results.css' rel='stylesheet'/>
+		 <script src="modules/DemoCustom/Personalization/js/personalization.js"></script> 
+  </body>
+  
+    <script>
+  document.addEventListener("DOMContentLoaded", function() {
+  
+    var root = document.querySelector("#search");
+ 
+	  Coveo.$$(root).on("buildingQuery", function(e, args) {
+			//query via searchbox
+			getPeopleBestMatches();
+	  });
+  
+   //hard refresh and redirect from another page
+	getPeopleBestMatches();
+  
+  });
+  
+  var myIconSelector = function(result)
+  {
+	for(var i in result.raw)
+	{
+		if(result.raw[i].Name == "FileType")
+		{
+				if(result.raw[i].Value == 'pdf')
+					return "coveo-sprites-salesforce-doctype-pdf-small";
+  
+				if(result.raw[i].Value == 'doc' || result.raw[i].Value == 'docx')
+					return "coveo-sprites-salesforce-doctype-word-small";
+					
+				if(result.raw[i].Value == 'ppt' || result.raw[i].Value == 'pptx')
+					return "coveo-sprites-salesforce-doctype-ppt-small";
+					
+				if(result.raw[i].Value == 'xls' || result.raw[i].Value == 'xlsx')
+					return "coveo-sprites-salesforce-doctype-xls-small";
+		}
+	}
+
+		
+	return "filetype";
+  }
+ 
+  </script>
+  
+  <!--<script>
+	
+	/*document.body.addEventListener('buildingQuery', function (e,args) {
+		 var afields = ["clientid"];
+		 e.detail.queryBuilder.addFieldsToInclude(afields);
+	});*/
+	
+   //document.addEventListener("DOMContentLoaded", function() {
+	 
+	  var root = document.querySelector("#search");
+ 
+	  Coveo.$$(root).on("buildingQuery", function(e, args) {
+		 var afields = ["RigID", "ID"];
+		 e.detail.queryBuilder.addFieldsToInclude(afields);
+	  });
+	 
+	  Coveo.$$(root).on("preprocessResults", function(e, args) {
+		e.detail.results.results.forEach(function(result) {
+		 
+			result.clickUri = "energydash.html?rigid=" + result.RigID;
+		
+		});
+	  });
+	 
+	//  Coveo.init(root);
+	//});
+   
+	</script>-->
+	
+</html>

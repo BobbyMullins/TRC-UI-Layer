@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Smart Search Results Page</title>
+
+    <!-- Bootstrap CDN -->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">-->
+    <link href='/modules/DemoCustom/Clients/TRC/CSS/bootstrap.min.css' rel='stylesheet'>
+      
+    <!-- Optional  Bootstrap Theme -->
+<!--    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">-->
+    
+
+      
+    
+    <!-- Font Awesome (for icons) -->
+    <script src="https://use.fontawesome.com/2c6ac1fdb1.js"></script>
+    
+<!--
+     Custom CSS 
+    <link href='Stylesheets/trc_results.css' rel='stylesheet'>
+-->
+<!--     Custom CSS -->
+    <link href='/modules/DemoCustom/Clients/TRC/CSS/trc_results.css' rel='stylesheet'>
+
+  </head>
+    
+  <body>
+<!-- Search Bar -->
+    
+<!-- Search Bar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div id='search_header' class="container-fluid">
+            <div class='text-center'>
+              <form class="navbar-form">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+            </div>
+      </div><!-- /.container-fluid -->
+    </nav>
+<!--
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div id='search_header' class="container-fluid">
+-->
+<!--
+        <div class="navbar-header">
+ TRC Logo 
+            <img src='http://blog.trendmicro.com/wp-content/uploads/2017/03/TRC-Logo-Color-300x108.png' alt='TRC Logo'> 
+        </div>
+-->
+<!--
+              <form class="navbar-form">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+      </div> /.container-fluid 
+    </nav>
+-->
+      
+<!-- Left Panel - Refiners -->
+    <div class='row'>
+        <div id='left_panel' class='container col-lg-3 col-md-3 col-sm-4 col-2'>
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Source System</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Type</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Author</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Date Modified</label>
+            </div>
+            <div class="checkbox">
+              <label><input type="checkbox" value="">Date Created</label>
+            </div>
+        </div>
+
+<!-- Center Panel - Main Content -->
+        <div id='center_panel' class='container col-lg-6 col-md-6 col-sm-8 col-10'>
+            <div class='result'>
+                <h2 class='result_title'><i class="fa fa-file-word-o" aria-hidden="true"></i> Energy</h2>
+                <h3 class='pagination'>Preview | Flip</h3>
+                <a  class='result_link' href='#'>trccompanies.sharepoint.com/sites/.../Presentation Slides/Energy</a>
+                <p class='result_summary'>Energy and Environment Solutions for MasTec 8_9_2011...</p>
+            </div>
+            <div class='result'>
+                <h2 class='result_title'><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Energy</h2>
+                <h3 class='pagination'>Preview | Flip</h3>
+                <a  class='result_link' href='#'>trccompanies.sharepoint.com/sites/.../Presentation Slides/Energy</a>
+                <p class='result_summary'>Energy and Environment Solutions for MasTec 8_9_2011...</p>
+            </div>
+            <div class='result'>
+                <h2 class='result_title'><i class="fa fa-file-word-o" aria-hidden="true"></i> Energy</h2>
+                <h3 class='pagination'>Preview | Flip</h3>
+                <a  class='result_link' href='#'>trccompanies.sharepoint.com/sites/.../Presentation Slides/Energy</a>
+                <p class='result_summary'>Energy and Environment Solutions for MasTec 8_9_2011...</p>
+            </div>
+            <div class='result'>
+                <h2 class='result_title'><i class="fa fa-file-pdf-o" aria-hidden="true"></i> Energy</h2>
+                <h3 class='pagination'>Preview | Flip</h3>
+                <a  class='result_link' href='#'>trccompanies.sharepoint.com/sites/.../Presentation Slides/Energy</a>
+                <p class='result_summary'>Energy and Environment Solutions for MasTec 8_9_2011...</p>
+            </div>
+            <div class='result'>
+                <h2 class='result_title'><i class="fa fa-file-word-o" aria-hidden="true"></i> Energy</h2>
+                <h3 class='pagination'>Preview | Flip</h3>
+                <a  class='result_link' href='#'>trccompanies.sharepoint.com/sites/.../Presentation Slides/Energy</a>
+                <p class='result_summary'>Energy and Environment Solutions for MasTec 8_9_2011...</p>
+            </div>
+        </div>
+    
+<!-- Right Panel - Trending -->
+        <div id='right_panel' class='container col-lg-3 col-md-3 col-sm-12 col-12'>
+            <h2>Trending</h2>
+            <h2>Social Content</h2>
+            <h2>Saved Queries</h2>
+
+        </div>
+    
+    </div> <!-- row div -->
+
+    <!-- Bootstrap jQuery CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+      
+    <!-- Bootstrap JS CDN -->
+<!--    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>-->
+    
+    <script src='/modules/DemoCustom/Clients/TRC/JS/bootstrap.min.js' rel='stylesheet'></script>
+      
+  </body>
+</html>
